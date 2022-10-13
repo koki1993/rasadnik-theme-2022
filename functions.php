@@ -253,6 +253,15 @@ function rasadnik_widgets_init() {
 		'before_title'  => '<h3 class="widget-title">',
 		'after_title'   => '</h3>',
 	) );
+	register_sidebar( array(
+		'name'          => esc_html__( '404 Widget', 'rasadnik' ),
+		'id'            => '404-widget',
+		'description'   => esc_html__( 'Add widgets here.', 'rasadnik' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
 }
 add_action( 'widgets_init', 'rasadnik_widgets_init' );
 

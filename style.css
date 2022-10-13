@@ -456,6 +456,30 @@ iframe {
 
 /*
 ===============================
+      404 TEMPLATE
+===============================
+*/
+.error-404 {
+  margin-top: 200px;
+  margin-bottom: 100px;
+  color: #00792e;
+  text-align: center; }
+  .error-404 li {
+    list-style-type: none;
+    display: inline-block;
+    padding-right: 20px;
+    margin-top: 30px; }
+    .error-404 li a {
+      color: #00792e;
+      font-size: 20px;
+      font-size: 1.25rem;
+      font-weight: 700; }
+      .error-404 li a:hover {
+        color: #00461b;
+        transition: 0.3s; }
+
+/*
+===============================
       FOOTER TEMPLATE
 ===============================
 */
