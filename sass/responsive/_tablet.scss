@@ -1,0 +1,81 @@
+/*
+===============================
+      Generic
+===============================
+*/
+
+// Css for styling header section of each page
+.pages-header-section {
+  h1 {
+    padding-top: 135px;
+    @include font-size(4);
+  }
+  p {
+    @include font-size(2.2);
+  }
+}
+
+/*
+===================================
+      PRODUCTS ARCHIVE TEMPLATE
+===================================
+*/
+.product-wrap {
+  .products-img-wrap {
+    height: 225px;
+    width: 225px;
+    background-size: 150px 150px;
+  }
+}
+
+/*
+===================================
+      ADVICES ARCHIVE TEMPLATE
+===================================
+*/
+.advice {
+  h2 {
+    margin-top: 20px;
+  }
+}
+
+/*
+===================================
+      CONTACT PAGE TEMPLATE
+===================================
+*/
+.contact-form-container {
+  .contact-sub-title {
+    @include font-size(4);
+  }
+  label {
+    @include font-size(3);
+    input[type=text],input[type=email],textarea {
+      width: 100%;
+    }
+    textarea {
+      height: 300px;
+    }
+  }
+  input[type=submit] {
+    padding: 5px 15px;
+    @include font-size(2.2);
+  }
+  .contact-text {
+    margin-top: 50px;
+    i,span {
+      @include font-size(2.7);
+    }
+    i {
+      width: 30px;
+      transform: translateY(-2px);
+    }
+    .fa-envelope {
+      transform: translateY(0);
+    }
+  }
+}
+.wpcf7-response-output {
+  margin-bottom: 50px;
+  @include font-size(3);
+}

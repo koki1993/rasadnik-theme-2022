@@ -1,0 +1,49 @@
+/*
+===================================
+      ADVICES ARCHIVE TEMPLATE
+===================================
+*/
+.advice {
+  img {
+    height: 320px;
+  }
+  p {
+    @include font-size(2.2);
+  }
+}
+
+/*
+===================================
+      PRODUCTS ARCHIVE TEMPLATE
+===================================
+*/
+@keyframes reveal-slide {
+  0% {
+    opacity: 0;
+    transform: translateX(-75px);
+  }
+}
+@keyframes img-scale {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.8);
+  }
+}
+.product-wrap {
+  .products-img-wrap {
+    height: 275px;
+    width: 275px;
+    background-repeat: no-repeat;
+    background-size: 175px 175px;
+    p {
+      @include font-size(1.2);
+      top: 36%;
+      left: 22%;
+      width: 150px;
+      opacity: 0;
+    }
+  }
+  
+}

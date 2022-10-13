@@ -1,0 +1,521 @@
+/*
+===============================
+      Generic
+===============================
+*/
+* {
+  font-family: 'Dosis';
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust:     100%;
+}
+p {
+  margin: 0;
+}
+hr {
+  overflow: visible; /* For IE */
+  height: 30px;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px 0 0 0;
+  border-radius: 20px;
+}
+hr:before { /* Not really supposed to work, but does */
+  display: block;
+  content: "";
+  height: 30px;
+  margin-top: -31px;
+  border-style: solid;
+  border-color: black;
+  border-width: 0 0 2px 0;
+  border-radius: 20px;
+}
+body {
+  background-color: rgba(171,204,186,0.4);
+}
+
+// Css for styling header section of each page
+.pages-header-section {
+  height: 350px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-bottom: 40px;
+  h1 {
+    padding-top: 145px;
+    text-align: center;
+    color: #fff;
+    animation-duration: 3s;
+    animation-name: slideIn;
+  }
+  p {
+    text-align: center;
+    @include font-size(2);
+    color: #fff;
+    animation-duration: 3s;
+    animation-name: slideIn;
+  }
+  @keyframes slideIn {
+    0% {
+      transform: translate3d(0, -50px, 0);
+    }
+  }
+}
+.bg-overlay {
+  position: relative;
+  z-index: 2;
+  background-position: center center;
+  background-size: cover;
+  &::after {
+      background-color: rgba(17, 17, 17, 0.5);
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      content: "";
+  }
+}
+
+// Css for styling pages nav section for each page
+.pages-nav {
+  margin-bottom: 40px;
+  animation-duration: 4s;
+  animation-name: navFade;
+  @keyframes navFade {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @include font-size(2);
+  i {
+    color: $color__text-main;
+    margin-right: 5px;
+    transform: translateY(-2px);
+    &:hover {
+      color: darken( $color__text-main, 10%);
+      transition: 0.3s;
+    }
+  }
+  a {
+    color: $color__text-main;
+    &:hover {
+      color: darken( $color__text-main, 10%);
+      transition: 0.3s;
+    }
+  }
+}
+
+// Excerpt read more style
+.read-more {
+  color: $color__excerpt-link;
+  &:hover {
+    color: darken($color__excerpt-link, 10%);
+    transition: 0.3s;
+  }
+}
+/*
+===============================
+      HOME PAGE TEMPLATE
+===============================
+*/
+
+// Slider
+.welcome-section-hidden {
+  opacity: 0;
+}
+.slider-section {
+  .swiper-slide {
+    img {
+      width: 100%;
+      height: 100vh;
+    }
+    position: relative;
+    color: $color__text-main;
+    .swiper-text {
+      position: absolute;
+      background-color: rgba(255,255,255, 0.7);
+      border-radius: 30px;
+      height: 200px;
+      bottom: -50px;
+      width: 750px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 10px 0;
+      h3 {
+        text-align: center;
+      }
+      p {
+        text-align: center;
+        @include font-size(1.7);
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+// Welcome section
+.welcome-section {
+  margin: 75px 0 25px;
+  text-align: center;
+  color: $color__text-main;
+  animation-duration: 2s;
+  animation-name: slidein;
+  @keyframes slidein {
+    0% {transform: translate3d(0, -200%, 0);}
+  }
+  h1 {
+    @include font-size(5);
+  }
+  hr {
+    width: 100px;
+    height: 5px;
+    background-color: $color__text-main;
+    margin: 0 auto 50px;
+    opacity: 1;
+  }
+  p {
+    @include font-size(2);
+    margin-bottom: 0;
+  }
+}
+.reveal-section{
+  position: relative;
+  transform: translateY(-150px);
+  opacity: 0;
+  transition: 2s all ease;
+}
+.reveal-section.active{
+  transform: translateY(0);
+  opacity: 1;
+}
+
+// Advices section
+.home-advices {
+  color: $color__text-main;
+  h2 {
+    margin-bottom: 75px;
+    text-align: center;
+  }
+  margin-top: 100px;
+  .btn-container {
+    display: flex;
+    justify-content: center;
+    .btn-advices {
+      @include font-size(2.2);
+      padding: 10px 50px;
+      border-radius: 25px;
+      margin-right: 25px;
+      transition-duration: 1s;
+      transition-property: transform;
+      transform: translateY(-50%);
+    }
+    .active-tab {
+      transition-duration: 1s;
+      transition-property: transform;
+      transform: translateY(-66%);
+    }
+    .btn:focus {
+      box-shadow: none;
+    }
+  }
+  .tab-content {
+    display: none;
+    img {
+      margin: 50px 20px;
+      height: 200px;
+      width: 300px;
+    }
+    p {
+      margin: 70px 20px;
+      @include font-size(2);
+    }
+  }
+  .tab-content-active {
+    display: grid;
+    text-align: center;
+    height: 300px;
+    transform: translateY(-20%);
+    position: relative;
+    z-index: -1;
+    background-color: $color__background-tabs;
+  }
+}
+
+/*
+===================================
+      PRODUCTS ARCHIVE TEMPLATE
+===================================
+*/
+@keyframes reveal-slide {
+  0% {
+    opacity: 0;
+    transform: translateX(-75px);
+  }
+}
+@keyframes img-scale {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.8);
+  }
+}
+.product-wrap {
+  margin-bottom: 40px;
+  animation-name: reveal-slide;
+  animation-duration: 3s;
+  .products-img-wrap {
+    background-color: $color__background-tabs;
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    padding: 50px 0;
+    margin: 0 auto 20px;
+    background-repeat: no-repeat;
+    background-size: 200px 200px;
+    background-position: center;
+    position: relative;
+    transition: all 1s linear;
+    p {
+      opacity: 0;
+    }
+  }
+  img {
+    height: 200px;
+    margin: 0 auto;
+    display: block;
+  }
+  h2 {
+    text-align: center;
+    color: $color__text-main;
+    margin-bottom: 30px;
+  }
+}
+/*
+===================================
+      ADVICES ARCHIVE TEMPLATE
+===================================
+*/
+.advice {
+  text-align: center;
+  color: $color__text-main;
+  hr {
+    height: 1px !important;
+    box-shadow: 0 !important;
+    margin: 15px 0 20px 0;
+  }
+  hr:before { /* Not really supposed to work, but does */
+    display: none;
+  }
+  img {
+    height: 300px;
+    width: 100%;
+    max-width: 500px;
+  }
+  h2 {
+    margin-top: 30px;
+    font-weight: 700;
+    a {
+      color: $color__text-main;
+      &:hover {
+        color: lighten( $color__text-main, 10%);
+        transition: 0.3s;
+      }
+    }
+  }
+  p {
+    @include font-size(1.8);
+    margin: 0 15px 15px;
+    text-align: justify;
+  }
+  .slide-left {
+    animation-duration: 2s;
+    animation-name: slideleftside;
+  }
+  @keyframes slideleftside {
+    0% {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+  .slide-right {
+    animation-duration: 2s;
+    animation-name: sliderightside;
+  }
+  @keyframes sliderightside {
+    0% {
+      transform: translate3d( 50%, 0, 0);
+    }
+  }
+}
+
+/*
+===================================
+      CONTACT PAGE TEMPLATE
+===================================
+*/
+iframe {
+  width: 100%;
+  height: 100%;
+}
+.map-container {
+  border: 5px solid $color__background-input;
+  margin-bottom: 50px;
+  height: 300px;
+}
+.contact-form-container {
+  label {
+    width: 100%;
+    color: $color__text-main;
+    @include font-size(2);
+    margin-bottom: 10px;
+    font-weight: 500;
+    input[type=text],input[type=email],textarea {
+      padding-left: 10px;
+      margin-top: 5px;
+      width: 100%;
+      background-color: $color__background-input;
+      resize: none;
+      color: $color__text-main;
+      border: none;
+      border-radius: 5px;
+      &:focus-visible {
+        outline: none;
+      }
+    }
+  }
+  input[type=submit] {
+    font-weight: 600;
+    color: lighten( $color__text-main, 30%);
+    background-color: darken( $color__background-submit, 10%);
+    border: none;
+    padding: 5px 20px;
+    border-radius: 5px;
+    align-items: flex-end;
+  }
+  textarea {
+    height: 200px;
+  }
+  .contact-sub-title {
+    color: $color__text-main;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  .contact-text {
+    margin-top: 30px;
+    i,span {
+      color: $color__text-main;
+      @include font-size(1.7);
+      margin-bottom: 20px;
+    }
+    i {
+      width: 20px;
+    }
+    .fa-map-marker-alt {
+      text-align: center;
+    }
+  }
+}
+.wpcf7-response-output {
+  width: 100%;
+  margin: 20px 0 !important;
+  border-color: $color__background-submit !important;
+}
+
+/*
+===================================
+      SINGLE PAGE TEMPLATE
+===================================
+*/
+.single-content-wrapper {
+  color: $color__text-main;
+  h3 {
+    @include font-size(3);
+    font-weight: 700;
+    margin-top: 40px;
+  }
+  img {
+    float: left;
+    margin-right: 20px;
+  }
+  p {
+    @include font-size(2);
+    text-align: justify;
+    margin-bottom: 10px;
+  }
+  table {
+    color: $color__text-main;
+    margin: 0 auto 30px;
+    tr {
+      border-bottom: 1px solid $color__text-main;
+    }
+    th {
+      padding-bottom: 5px;
+    }
+  }
+  li {
+    @include font-size(2);
+  }
+}
+.single-tag-wrapper {
+  color: $color__text-main;
+  margin-bottom: 20px;
+  h3 {
+    font-weight: 700;
+    display: inline-block;
+  }
+  span {
+    @include font-size(2);
+  }
+}
+
+
+/*
+===============================
+      FOOTER TEMPLATE
+===============================
+*/
+
+.footer {
+  background-color: $color__background-input;
+  margin-top: 50px;
+  padding-top: 50px;
+  height: 300px;
+  color: $color__text-main;
+  ul {
+    padding: 0;
+    li {
+      list-style-type: none;
+      a {
+        color: $color__text-main;
+        @include font-size(2.2);
+      }
+    }
+  }
+  .copyright-text {
+    margin-top: 30px;
+    text-align: center;
+  }
+}
+
+.home-product-wrapper {
+  .home-products-img-wrap {
+    background-color: $color__background-tabs;
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    padding: 50px 0;
+    margin: 0 auto 20px;
+    background-repeat: no-repeat;
+    background-size: 200px 200px;
+    background-position: center;
+    position: relative;
+    transition: all 1s linear;
+    p {
+      opacity: 0;
+    }
+  }
+}
