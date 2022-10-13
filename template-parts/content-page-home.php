@@ -7,8 +7,11 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<section class="pages-header-section bg-overlay d-md-none" style="background-image: url('<?php echo get_header_image(); ?>');">
+    <h1><?php the_title() ?></h1>
+  </section> <!-- .pages-header-section -->
   <!-- Swiper -->
-  <section class="slider-section hidden-xs">
+  <section class="slider-section d-none d-md-inline">
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
         <?php
@@ -71,7 +74,7 @@
     </div>
   </section>
   <hr>
-  <section class="home-advices reveal-section" id="home-sections">
+  <section class="home-advices reveal-section d-none d-sm-block" id="home-sections">
     <div class="home-advices-container">
       <div class="container">
         <h2><?php echo get_field('home_advices_title'); ?></h2>
@@ -114,7 +117,7 @@
             </div>
           </div> <!-- .row -->
         </div> <!-- .tab-content -->
-        <div class="tab-content tab-3 col-sm-10 offset-sm-1">
+        <div class="tab-content tab-3 col-sm-10 offset-sm-1 col-xs-12">
           <div class="row">
             <div class="col-sm-4">
               <img src="<?php echo $adviceThreeImage['url']; ?>"></img>
@@ -127,5 +130,4 @@
       </div> <!-- .container -->
     </div> <!-- .home-advices-container -->
   </section> <!-- .home-advices -->
-  
 </article>

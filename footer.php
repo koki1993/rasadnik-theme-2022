@@ -12,20 +12,20 @@
         <div class="container">
           <div class="row">
             <?php if (is_active_sidebar( 'footer-products' ) ) : ?>
-            <div class="col-md-4">
+            <div class="col-6 col-md-4">
               <?php dynamic_sidebar( 'footer-products' ); ?>
             </div>
             <?php endif; 
             
             if ( is_active_sidebar( 'footer-advices' ) ) :
             ?>
-            <div class="col-md-4">
+            <div class="col-6 col-md-4">
               <?php dynamic_sidebar( 'footer-advices' ); ?>
             </div>
             <?php endif; 
             
             if ( is_active_sidebar( 'footer-contact' ) ) : ?>
-            <div class="col-md-4">
+            <div class="col-12 col-md-4">
               <?php dynamic_sidebar( 'footer-contact' ); ?>
             </div>
             <?php endif; ?>

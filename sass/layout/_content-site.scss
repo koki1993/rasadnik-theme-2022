@@ -482,16 +482,30 @@ iframe {
 .footer {
   background-color: $color__background-input;
   margin-top: 50px;
-  padding-top: 50px;
-  height: 300px;
+  padding: 50px 0;
   color: $color__text-main;
+  text-align: center;
+  .fa-map-marker-alt {
+    text-align: center;
+  }
+  i {
+    width: 20px;
+    display: inline-block;
+  }
+  p {
+    @include font-size(2);
+    display: inline-block;
+  }
+  h3 {
+    font-weight: 700;
+  }
   ul {
     padding: 0;
     li {
       list-style-type: none;
       a {
         color: $color__text-main;
-        @include font-size(2.2);
+        @include font-size(2);
       }
     }
   }
