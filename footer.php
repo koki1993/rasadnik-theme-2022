@@ -29,8 +29,8 @@
               <?php dynamic_sidebar( 'footer-contact' ); ?>
             </div>
             <?php endif; ?>
+            <p class="copyright-text">Copyright &copy; <?php echo date('Y'); ?> Rasadnik Donević</p>
           </div>
-          <p class="copyright-text">Copyright &copy; <?php echo date('Y'); ?> Rasadnik Donević</p>
         </div>
       </section>
 		</div><!-- .site-info -->
