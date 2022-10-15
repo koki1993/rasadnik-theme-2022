@@ -9,7 +9,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
   <section class="pages-header-section bg-overlay" style="background-image: url('<?php echo get_header_image(); ?>');">
     <h1><?php the_title() ?></h1>
-    <p><?php echo get_field('contact_description'); ?></p>
+    <p><?php echo get_field('gallery_description'); ?></p>
   </section> <!-- .pages-header-section -->
   <nav class="pages-nav">
     <div class="container">

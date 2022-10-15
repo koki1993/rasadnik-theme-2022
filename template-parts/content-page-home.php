@@ -65,13 +65,12 @@
         ?>
         <div class="col-md-4">
           <div class="home-product-wrapper">
-            <div class="home-products-img-wrap" 
-          style="background-image: url(<?php echo $image; ?>)">
-          <p><?php echo wp_trim_words($post_object->post_content, 20); ?></p>
-          </div>
+            <div class="home-products-img-wrap" style="background-image: url(<?php echo $image; ?>)">
+            <p><?php echo wp_trim_words($post_object->post_content, 20); ?></p>
+          </div><!-- .home-products-img-wrap -->
           <a href="<?php echo get_permalink($post_object->ID); ?>"><h3><?php echo get_the_title($post_object->ID); ?></h3></a>
-          </div>
-        </div>
+          </div><!-- .home-product-wrapper -->
+        </div><!-- .col-md-4 -->
         <?php 
         endwhile;
       endif; ?>
