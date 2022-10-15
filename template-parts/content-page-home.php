@@ -7,11 +7,11 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-<section class="pages-header-section bg-overlay d-md-none" style="background-image: url('<?php echo get_header_image(); ?>');">
+<section class="pages-header-section bg-overlay d-lg-none" style="background-image: url('<?php echo get_header_image(); ?>');">
     <h1><?php the_title() ?></h1>
   </section> <!-- .pages-header-section -->
   <!-- Swiper -->
-  <section class="slider-section d-none d-md-inline">
+  <section class="slider-section d-none d-lg-inline">
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
         <?php
@@ -51,6 +51,11 @@
   <hr>
   <section class="home-products-section reveal-section" id="home-sections">
     <div class="container-fluid">
+      <?php
+      $home_products_title = get_field('home_products_title');
+      ?>
+      <h2><?php echo $home_products_title; ?></h2>
+      <hr>
       <div class="row">
       <?php
       if ( have_rows( 'products' ) ) :
@@ -64,7 +69,7 @@
           style="background-image: url(<?php echo $image; ?>)">
           <p><?php echo wp_trim_words($post_object->post_content, 20); ?></p>
           </div>
-          <a href="<?php echo get_permalink($post_object->ID); ?>"><h2><?php echo get_the_title($post_object->ID); ?></h2></a>
+          <a href="<?php echo get_permalink($post_object->ID); ?>"><h3><?php echo get_the_title($post_object->ID); ?></h3></a>
           </div>
         </div>
         <?php 
@@ -74,7 +79,7 @@
     </div>
   </section>
   <hr>
-  <section class="home-advices reveal-section d-none d-sm-block" id="home-sections">
+  <section class="home-advices-desktop reveal-section d-none d-lg-block" id="home-sections">
     <div class="home-advices-container">
       <div class="container">
         <h2><?php echo get_field('home_advices_title'); ?></h2>
@@ -97,7 +102,7 @@
           $adviceThreeImage = get_field('advice_three_image');
           $adviceThreeText  = get_field('advice_three_text');
           ?>
-        <div class="tab-content tab-1 tab-content-active col-sm-10 offset-sm-1">
+        <div class="tab-content tab-1 tab-content-active col-sm-12 col-xl-10 offset-xl-1">
           <div class="row">
             <div class="col-sm-4">
               <img src="<?php echo esc_url($adviceOneImage['url']); ?>"></img>
@@ -107,7 +112,7 @@
             </div>
           </div> <!-- .row -->
         </div> <!-- .tab-content -->
-        <div class="tab-content tab-2 col-sm-10 offset-sm-1">
+        <div class="tab-content tab-2 col-sm-12 col-xl-10 offset-xl-1">
           <div class="row">
             <div class="col-sm-4">
               <img src="<?php echo $adviceTwoImage['url']; ?>"></img>
@@ -117,7 +122,7 @@
             </div>
           </div> <!-- .row -->
         </div> <!-- .tab-content -->
-        <div class="tab-content tab-3 col-sm-10 offset-sm-1 col-xs-12">
+        <div class="tab-content tab-3 col-sm-12 col-xl-10 offset-xl-1">
           <div class="row">
             <div class="col-sm-4">
               <img src="<?php echo $adviceThreeImage['url']; ?>"></img>
@@ -129,5 +134,25 @@
         </div> <!-- .tab-content -->
       </div> <!-- .container -->
     </div> <!-- .home-advices-container -->
-  </section> <!-- .home-advices -->
+  </section> <!-- .home-advices-desktop -->
+  <section class="home-advices-mobile-section d-lg-none">
+    <div class="container">
+      <div class="row">
+        <h2><?php echo get_theme_mod('advices_title'); ?></h2>
+        <hr>
+          <?php 
+          if (have_rows('home_advices_mobile') ) :
+            while( have_rows('home_advices_mobile') ) : the_row();
+            $post_object_advice = get_sub_field('home_advice'); ?>
+              <div class="col-12">
+              <a href="<?php echo get_permalink($post_object_advice->ID); ?>"><h3><?php echo get_the_title($post_object_advice->ID); ?></h3></a>
+                <p><?php echo wp_trim_words($post_object_advice->post_content, 30); ?></p>
+                <hr class="home-advices-hr">
+              </div>
+            <?php 
+            endwhile;
+          endif; ?>
+      </div><!-- .row -->
+    </div><!-- .container -->
+  </section><!-- .home-advices-mobile-section -->
 </article>

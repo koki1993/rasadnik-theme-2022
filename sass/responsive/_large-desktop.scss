@@ -1,5 +1,26 @@
 /*
 ===================================
+      HOME PAGE TEMPLATE
+===================================
+*/
+.home-products-section {
+  .home-product-wrapper {
+    .home-products-img-wrap {
+      height: 400px;
+      width: 400px;
+      background-size: 250px 250px;
+      p {
+        @include font-size(1.4);
+        top: 32%;
+        left: 33%;
+        width: 125px;
+        opacity: 0;
+      }
+    }
+  }
+}
+/*
+===================================
       ADVICES ARCHIVE TEMPLATE
 ===================================
 */

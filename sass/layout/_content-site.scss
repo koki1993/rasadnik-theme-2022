@@ -3,10 +3,9 @@
       Generic
 ===============================
 */
-* {
+body {
+  background-color: rgba(171,204,186,0.4);
   font-family: 'Dosis';
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust:     100%;
 }
 p {
   margin: 0;
@@ -28,9 +27,6 @@ hr:before { /* Not really supposed to work, but does */
   border-color: black;
   border-width: 0 0 2px 0;
   border-radius: 20px;
-}
-body {
-  background-color: rgba(171,204,186,0.4);
 }
 
 // Css for styling header section of each page
@@ -122,6 +118,14 @@ body {
       HOME PAGE TEMPLATE
 ===============================
 */
+// Home Header
+.page-template-template-home {
+  .pages-header-section {
+    h1 {
+      @include font-size(4);
+    }
+  }
+}
 
 // Slider
 .welcome-section-hidden {
@@ -159,7 +163,7 @@ body {
 
 // Welcome section
 .welcome-section {
-  margin: 75px 0 25px;
+  margin: 75px 0;
   text-align: center;
   color: $color__text-main;
   animation-duration: 2s;
@@ -176,6 +180,10 @@ body {
     background-color: $color__text-main;
     margin: 0 auto 50px;
     opacity: 1;
+    border: none;
+    &::before {
+      display: none;
+    }
   }
   p {
     @include font-size(2);
@@ -193,14 +201,98 @@ body {
   opacity: 1;
 }
 
-// Advices section
-.home-advices {
-  color: $color__text-main;
+// Home products section
+.home-products-section {
+  .home-product-wrapper {
+    .home-products-img-wrap {
+      background-color: $color__background-tabs;
+      height: 300px;
+      width: 300px;
+      border-radius: 50%;
+      padding: 50px 0;
+      margin: 0 auto 20px;
+      background-repeat: no-repeat;
+      background-size: 200px 200px;
+      background-position: center;
+      position: relative;
+      transition: all 1s linear;
+      p {
+        opacity: 0;
+      }
+    }
+  }
   h2 {
+    text-align: center;
+    color: $color__text-main;
+    font-weight: 700;
+  }
+  hr {
+    width: 100px;
+    height: 5px;
+    background-color: $color__text-main;
+    margin: 0 auto 50px;
+    opacity: 1;
+    border: none;
+    &::before {
+      display: none;
+    }
+  }
+  h3 {
+    text-align: center;
+    color: $color__text-main;
+    margin-bottom: 50px;
+    font-weight: 700;
+  }
+}
+
+// Home Advices Mobile section
+.home-advices-mobile-section {
+  color: $color__text-main;
+  text-align: center;
+  h2 {
+    font-weight: 700;
+    @include font-size(3);
+  }
+  h3 {
+    font-weight: 700;
+    margin: 20px 0;
+  }
+  p {
+    @include font-size(2);
+  }
+  a {
+    color: $color__text-main;
+  }
+  .home-advices-hr {
+    border: none;
+    background-color: #ccc;
+    color: #ccc;
+    height: 2px;
+    width: 100%;
+    margin-top: 10px;
+  }
+  hr {
+    width: 100px;
+    height: 5px;
+    background-color: $color__text-main;
+    margin: 0 auto 10px;
+    opacity: 1;
+    border: none;
+    &::before {
+      display: none;
+    }
+  }
+}
+
+// Advices section
+.home-advices-desktop {
+  color: $color__text-main;
+  margin-top: 20px;
+  h2 {
+    font-weight: 700;
     margin-bottom: 75px;
     text-align: center;
   }
-  margin-top: 100px;
   .btn-container {
     display: flex;
     justify-content: center;
@@ -357,14 +449,14 @@ body {
       CONTACT PAGE TEMPLATE
 ===================================
 */
-iframe {
-  width: 100%;
-  height: 100%;
-}
 .map-container {
   border: 5px solid $color__background-input;
   margin-bottom: 50px;
   height: 300px;
+  iframe {
+    width: 100%;
+    height: 290px;
+  }
 }
 .contact-form-container {
   label {
@@ -503,7 +595,6 @@ iframe {
       FOOTER TEMPLATE
 ===============================
 */
-
 .footer {
   background-color: $color__background-input;
   margin-top: 50px;
@@ -537,24 +628,5 @@ iframe {
   .copyright-text {
     margin-top: 30px;
     text-align: center;
-  }
-}
-
-.home-product-wrapper {
-  .home-products-img-wrap {
-    background-color: $color__background-tabs;
-    height: 300px;
-    width: 300px;
-    border-radius: 50%;
-    padding: 50px 0;
-    margin: 0 auto 20px;
-    background-repeat: no-repeat;
-    background-size: 200px 200px;
-    background-position: center;
-    position: relative;
-    transition: all 1s linear;
-    p {
-      opacity: 0;
-    }
   }
 }

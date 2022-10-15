@@ -12,7 +12,7 @@
 function rasadnik_donevic_scripts() {
 
   // Fonts
-  wp_register_style( 'dosis', 'https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;600;700&display=swap' );
+  wp_enqueue_style( 'dosis', 'https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap' );
 
   // Styles
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '5.2.0', 'all' );

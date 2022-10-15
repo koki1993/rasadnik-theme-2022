@@ -35,7 +35,6 @@ a {
   .main-navigation ul {
     list-style: none;
     margin: 0;
-    font-family: Dosis;
     font-weight: 600; }
     .main-navigation ul :last-child {
       padding-right: 0; }
@@ -59,10 +58,9 @@ a {
       Generic
 ===============================
 */
-* {
-  font-family: 'Dosis';
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%; }
+body {
+  background-color: rgba(171, 204, 186, 0.4);
+  font-family: 'Dosis'; }
 
 p {
   margin: 0; }
@@ -86,9 +84,6 @@ hr:before {
   border-color: black;
   border-width: 0 0 2px 0;
   border-radius: 20px; }
-
-body {
-  background-color: rgba(171, 204, 186, 0.4); }
 
 .pages-header-section {
   height: 350px;
@@ -162,6 +157,10 @@ body {
       HOME PAGE TEMPLATE
 ===============================
 */
+.page-template-template-home .pages-header-section h1 {
+  font-size: 40px;
+  font-size: 2.5rem; }
+
 .welcome-section-hidden {
   opacity: 0; }
 
@@ -190,7 +189,7 @@ body {
       font-weight: 700; }
 
 .welcome-section {
-  margin: 75px 0 25px;
+  margin: 75px 0;
   text-align: center;
   color: #00792e;
   animation-duration: 2s;
@@ -206,7 +205,10 @@ body {
     height: 5px;
     background-color: #00792e;
     margin: 0 auto 50px;
-    opacity: 1; }
+    opacity: 1;
+    border: none; }
+    .welcome-section hr::before {
+      display: none; }
   .welcome-section p {
     font-size: 20px;
     font-size: 1.25rem;
@@ -222,16 +224,82 @@ body {
   transform: translateY(0);
   opacity: 1; }
 
-.home-advices {
+.home-products-section .home-product-wrapper .home-products-img-wrap {
+  background-color: #ABCCBA;
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  padding: 50px 0;
+  margin: 0 auto 20px;
+  background-repeat: no-repeat;
+  background-size: 200px 200px;
+  background-position: center;
+  position: relative;
+  transition: all 1s linear; }
+  .home-products-section .home-product-wrapper .home-products-img-wrap p {
+    opacity: 0; }
+.home-products-section h2 {
+  text-align: center;
   color: #00792e;
-  margin-top: 100px; }
-  .home-advices h2 {
+  font-weight: 700; }
+.home-products-section hr {
+  width: 100px;
+  height: 5px;
+  background-color: #00792e;
+  margin: 0 auto 50px;
+  opacity: 1;
+  border: none; }
+  .home-products-section hr::before {
+    display: none; }
+.home-products-section h3 {
+  text-align: center;
+  color: #00792e;
+  margin-bottom: 50px;
+  font-weight: 700; }
+
+.home-advices-mobile-section {
+  color: #00792e;
+  text-align: center; }
+  .home-advices-mobile-section h2 {
+    font-weight: 700;
+    font-size: 30px;
+    font-size: 1.875rem; }
+  .home-advices-mobile-section h3 {
+    font-weight: 700;
+    margin: 20px 0; }
+  .home-advices-mobile-section p {
+    font-size: 20px;
+    font-size: 1.25rem; }
+  .home-advices-mobile-section a {
+    color: #00792e; }
+  .home-advices-mobile-section .home-advices-hr {
+    border: none;
+    background-color: #ccc;
+    color: #ccc;
+    height: 2px;
+    width: 100%;
+    margin-top: 10px; }
+  .home-advices-mobile-section hr {
+    width: 100px;
+    height: 5px;
+    background-color: #00792e;
+    margin: 0 auto 10px;
+    opacity: 1;
+    border: none; }
+    .home-advices-mobile-section hr::before {
+      display: none; }
+
+.home-advices-desktop {
+  color: #00792e;
+  margin-top: 20px; }
+  .home-advices-desktop h2 {
+    font-weight: 700;
     margin-bottom: 75px;
     text-align: center; }
-  .home-advices .btn-container {
+  .home-advices-desktop .btn-container {
     display: flex;
     justify-content: center; }
-    .home-advices .btn-container .btn-advices {
+    .home-advices-desktop .btn-container .btn-advices {
       font-size: 22px;
       font-size: 1.375rem;
       padding: 10px 50px;
@@ -240,23 +308,23 @@ body {
       transition-duration: 1s;
       transition-property: transform;
       transform: translateY(-50%); }
-    .home-advices .btn-container .active-tab {
+    .home-advices-desktop .btn-container .active-tab {
       transition-duration: 1s;
       transition-property: transform;
       transform: translateY(-66%); }
-    .home-advices .btn-container .btn:focus {
+    .home-advices-desktop .btn-container .btn:focus {
       box-shadow: none; }
-  .home-advices .tab-content {
+  .home-advices-desktop .tab-content {
     display: none; }
-    .home-advices .tab-content img {
+    .home-advices-desktop .tab-content img {
       margin: 50px 20px;
       height: 200px;
       width: 300px; }
-    .home-advices .tab-content p {
+    .home-advices-desktop .tab-content p {
       margin: 70px 20px;
       font-size: 20px;
       font-size: 1.25rem; }
-  .home-advices .tab-content-active {
+  .home-advices-desktop .tab-content-active {
     display: grid;
     text-align: center;
     height: 300px;
@@ -355,14 +423,13 @@ body {
       CONTACT PAGE TEMPLATE
 ===================================
 */
-iframe {
-  width: 100%;
-  height: 100%; }
-
 .map-container {
   border: 5px solid #C8D9E0;
   margin-bottom: 50px;
   height: 300px; }
+  .map-container iframe {
+    width: 100%;
+    height: 290px; }
 
 .contact-form-container label {
   width: 100%;
@@ -512,21 +579,6 @@ iframe {
     margin-top: 30px;
     text-align: center; }
 
-.home-product-wrapper .home-products-img-wrap {
-  background-color: #ABCCBA;
-  height: 300px;
-  width: 300px;
-  border-radius: 50%;
-  padding: 50px 0;
-  margin: 0 auto 20px;
-  background-repeat: no-repeat;
-  background-size: 200px 200px;
-  background-position: center;
-  position: relative;
-  transition: all 1s linear; }
-  .home-product-wrapper .home-products-img-wrap p {
-    opacity: 0; }
-
 /*--------------------------------------------------------------
 # Responsive layout
 --------------------------------------------------------------*/
@@ -544,6 +596,16 @@ iframe {
   .pages-header-section p {
     font-size: 22px;
     font-size: 1.375rem; }
+
+  /*
+  ===================================
+        HOME PAGE TEMPLATE
+  ===================================
+  */
+  .home-products-section .home-product-wrapper .home-products-img-wrap {
+    height: 240px;
+    width: 240px;
+    background-size: 150px 150px; }
 
   /*
   ===================================
@@ -623,26 +685,30 @@ iframe {
         HOME PAGE TEMPLATE
   ===================================
   */
-  .home-product-wrapper .home-products-img-wrap p {
-    text-align: center;
-    color: #fff;
-    font-size: 12px;
-    font-size: 0.75rem;
-    text-shadow: 1px 1px black;
-    font-weight: 700;
-    position: absolute;
-    top: 30%;
-    left: 20%;
-    width: 125px;
-    opacity: 0; }
-  .home-product-wrapper .home-products-img-wrap:hover {
-    background-size: 150px 150px;
-    background-color: #416a54;
-    transition: all 1s linear; }
-    .home-product-wrapper .home-products-img-wrap:hover p {
-      opacity: 1;
-      transition: 1s;
-      transform: scale(150%); }
+  .home-products-section .home-product-wrapper .home-products-img-wrap {
+    height: 300px;
+    width: 300px;
+    background-size: 200px 200px; }
+    .home-products-section .home-product-wrapper .home-products-img-wrap p {
+      text-align: center;
+      color: #fff;
+      font-size: 12px;
+      font-size: 0.75rem;
+      text-shadow: 1px 1px black;
+      font-weight: 700;
+      position: absolute;
+      top: 32%;
+      left: 28%;
+      width: 125px;
+      opacity: 0; }
+    .home-products-section .home-product-wrapper .home-products-img-wrap:hover {
+      background-size: 150px 150px;
+      background-color: #416a54;
+      transition: all 1s linear; }
+      .home-products-section .home-product-wrapper .home-products-img-wrap:hover p {
+        opacity: 1;
+        transition: 1s;
+        transform: scale(150%); }
 
   /*
   ===================================
@@ -695,6 +761,8 @@ iframe {
   */
   .map-container {
     height: 500px; }
+    .map-container iframe {
+      height: 490px; }
 
   .contact-form-container label {
     font-size: 23px;
@@ -715,6 +783,23 @@ iframe {
     width: 450px; } }
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
+  /*
+  ===================================
+        HOME PAGE TEMPLATE
+  ===================================
+  */
+  .home-products-section .home-product-wrapper .home-products-img-wrap {
+    height: 400px;
+    width: 400px;
+    background-size: 250px 250px; }
+    .home-products-section .home-product-wrapper .home-products-img-wrap p {
+      font-size: 14px;
+      font-size: 0.875rem;
+      top: 32%;
+      left: 33%;
+      width: 125px;
+      opacity: 0; }
+
   /*
   ===================================
         ADVICES ARCHIVE TEMPLATE
