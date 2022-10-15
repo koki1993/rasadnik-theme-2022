@@ -420,6 +420,14 @@ hr:before {
     transform: translate3d(50%, 0, 0); } }
 /*
 ===================================
+      Gallery PAGE TEMPLATE
+===================================
+*/
+.gallery-section img {
+  margin: 2px; }
+
+/*
+===================================
       CONTACT PAGE TEMPLATE
 ===================================
 */

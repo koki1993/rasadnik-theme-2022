@@ -446,6 +446,17 @@ hr:before { /* Not really supposed to work, but does */
 
 /*
 ===================================
+      Gallery PAGE TEMPLATE
+===================================
+*/
+.gallery-section {
+  img {
+    margin: 2px;
+  }
+}
+
+/*
+===================================
       CONTACT PAGE TEMPLATE
 ===================================
 */
@@ -630,3 +641,4 @@ hr:before { /* Not really supposed to work, but does */
     text-align: center;
   }
 }
+

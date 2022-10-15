@@ -9,6 +9,12 @@ jQuery(document).ready(function($){
     speed: 1000,
   });
 });
+lightGallery(document.getElementById('animated-thumbnails-gallery'), {
+  thumbnail: true,
+});
+
+
+
 
 "use strict";
 // Function to reveal sections
